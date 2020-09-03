@@ -1,29 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Demo from './demo';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import myacc from './myacc';
 import App from './App';
-import Home from './home';
-import myChat from './myChat';
-import myOrder from './myOrder'
-
+import Example from './Example';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 
 ReactDOM.render(
     <BrowserRouter>
-        <App>
+        <MuiThemeProvider >
+        <App />
         <Switch>
-                <Route exact path="/" component={Home} />
-                <Route exact path="/user/:userId" component={Demo} />
-                <Route exact path="/user/:userId/MyAccount" component={myacc} />
-                <Route exact path="/user/:userId/MyChat" component={myChat} />
-                <Route exact path="/user/:userId/MyOrder" component={myOrder} />
-            </Switch>
-        </App>
-        
+            <Route exact path="/" component={Example} />
+        </Switch>
+            <App />
+            </MuiThemeProvider >
     </BrowserRouter>
-
-    , document.querySelector('#root'));
-
+        ,
+    document.getElementById('root')
+);
 
 

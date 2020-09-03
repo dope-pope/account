@@ -1,7 +1,18 @@
-.l {
-    text-decoration: none;
+
+.pol {
+    margin-right: 55em;
+    color: white;
 }
 
-.na {
-    color: black;
+.draw {
+    margin: 2em;
+}
+
+.det {
+    font-family: Arial;
+    margin-left: 1.5em;
+}
+
+.back {
+    margin-left: 1em;
 }
