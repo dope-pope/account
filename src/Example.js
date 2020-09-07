@@ -13,18 +13,19 @@ class Example extends Component {
 
     constructor(props, { match }) {
         super(props, { match } );
-        this.state = { drawerOpen: false ,userId:" ", userName: " " , userAbout:" " , userChat: " "};
+        this.state = { drawerOpen: false ,userId:" ", userName: " " , userAbout:" " , userChat: " ",userOrder: " "};
     }
     componentDidMount() {
         axios.get('http://localhost:8000/users')
-            .then((user) => {
-                var selectedUser = user.data[0];
+            .then((res) => {
+                var selectedUser = res.data[0];
 
                 this.setState({
                     name: selectedUser.userName,
                     about: selectedUser.userAbout,
                     id: selectedUser.userId,
                     chat: selectedUser.userChat,
+                    userOrder: selectedUser.userOrder
                 });
             });
     }
