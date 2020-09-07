@@ -14,7 +14,7 @@ ReactDOM.render(
         <App />
         <Switch>
                 <Route exact path="/" component={Example} />
-                <Route exact path="/"
+               
         </Switch>
             <App />
             </MuiThemeProvider >
