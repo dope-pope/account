@@ -47,19 +47,19 @@ class Example extends Component {
                     <div style={{ textAlign: 'left' }, { paddingRight: '5em' }}>
 
 
-                        <Link to={`/user/${this.state.id}/MyAccount`} className="l"><h3 className="det">My Account</h3>
+                        <Link to={`/user/${this.state.id}/MyAccount`} className="l" style={{ textDecoration:'none' }}><h3 className="det">My Account</h3>
                         </Link>
                  
-                        <Link to={`/user/${this.state.id}/MyOrder`} className="l"><h3 className="det">My Order</h3>
+                        <Link to={`/user/${this.state.id}/MyOrder`} className="l" style={{ textDecoration: 'none' }}><h3 className="det">My Order</h3>
                         </Link>
 
-                        <Link to={`/user/${this.state.id}/MyChat`} className="l"><h3 className="det">My Chats</h3>
+                        <Link to={`/user/${this.state.id}/MyChat`} className="l" style={{ textDecoration: 'none' }}><h3 className="det">My Chats</h3>
                         </Link>
 
-                        <Link to={`/user/${this.state.id}/Settings`} className="l"><h3 className="det">Settings</h3>
+                        <Link to={`/user/${this.state.id}/Settings`} className="l" style={{ textDecoration: 'none' }}><h3 className="det">Settings</h3>
                         </Link>
 
-                        <Link to={`/user/${this.state.id}/Help`} className="l"><h3 className="det">Help</h3>
+                        <Link to={`/user/${this.state.id}/Help`} className="l" style={{ textDecoration: 'none' }}><h3 className="det">Help</h3>
                         </Link>
                         </div>
                         {this.props.children}
@@ -68,7 +68,7 @@ class Example extends Component {
                 <div style={contentStyle}>
 
 
-                    <AppBar color="primary" onLeftIconButtonClick={() => this.setState({ drawerOpen: true })} >
+                    <AppBar className="bar" style={{ backgroundColor: '#FFD662FF ' }} onLeftIconButtonClick={() => this.setState({ drawerOpen: true })} >
                         <h2 className="pol"> Hello {this.state.name}</h2>
                     </AppBar>
 
