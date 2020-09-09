@@ -1,7 +1,8 @@
 
 .pol {
     margin-right: 55em;
-    color: white;
+    color: black;
+    font-family: Light;
 }
 
 .draw {
@@ -9,8 +10,10 @@
 }
 
 .det {
-    font-family: Arial;
+    font-family: Light;
     margin-left: 1.5em;
+    text-decoration: none;
+    color: black;
 }
 
 .back {

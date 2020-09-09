@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import { Drawer } from '@material-ui/core';
-import { Form, Row, Col, FormLabel, FormGroup, FormControl, FormText, FormCheck } from 'react-bootstrap';
-import { Button} from 'reactstrap';
-import { useForm } from "react-hook-form";
-import { List, ListItem, AppBar, Checkbox } from 'material-ui';
+import RaisedButton from 'material-ui/RaisedButton';
+import { List, ListItem, AppBar } from 'material-ui';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
@@ -11,11 +9,11 @@ import './Example.css';
 import axios from 'axios';
 
 
-class MyAcc extends Component {
+class Help extends Component {
 
     constructor(props, { match }) {
-        super(props, { match } );
-        this.state = { drawerOpen: false ,userId:" ", userName: " " , userAbout:" " , userChat: " ",userOrder: " "};
+        super(props, { match });
+        this.state = { drawerOpen: false, userId: " ", userName: " ", userAbout: " ", userChat: " ", userOrder: " " };
     }
     componentDidMount() {
         axios.get('http://localhost:8000/users')
@@ -73,40 +71,41 @@ class MyAcc extends Component {
                     <AppBar className="bar" style={{ backgroundColor: '#FFD662FF ' }} onLeftIconButtonClick={() => this.setState({ drawerOpen: true })} >
                         <h2 className="pol"> Hello {this.state.name}</h2>
                     </AppBar>
+                    <div className="col-12 col-md-6" style={{ marginLeft:'3em' }}>
+                       
+                        <h2>Order Related</h2>
+                        <div>
+                            <h3>Want to know About Your Order Status ?</h3>
+                            <p>Go to Orders, and click on Track Order. </p>
 
-                    <div className="container" style={{ marginLeft: '3em' }}>
-                        <form>
-                            <h2>Personal Information</h2>
-                            <div className="row" style={{ marginBottom: '1em' }}>
-                                <input type="text" placeholder="First Name" />
-                            </div>
-                            <div className="row ">
-                                <input type="text" placeholder="Last Name" />
-                            </div>
-                            <div className="row">
-                                <h2>Gender</h2>
-                            <Form.Check type="checkbox" label="Male" />
-                                <Form.Check type="checkbox" label="Female" />
-                            </div>
+                            <h3>Want to Cancel Your Order ?</h3>
+                            <p>As this is a customization website, the item should be cancelled within 48 hours of ordering, before the designer starts the work. To cancel order,
+Go to Orders, and click on Cancel Order.</p>
 
-                            <div>
-                                <h2>Email</h2>
-                                <div className="row">
-                                    <input type="email" placeholder="Email" />
-                                </div>
+                            <h3>Want to Know About any Payment Issue Or Payment Deducted from account without booking Order?</h3>
+                            <p>Do not Worry,we will take care of it in case the amount is debited from your account it will be refunded within 5-6 working days.</p>
 
-                                <h2>Mobile Number</h2>
-                                <div className="row" style={{ marginBottom:'2em' }}>
-                                    <input type="phone" placeholder="Mobile Number" />
-                                </div>
+                            <h3>Want to Talk with Customer Care?</h3>
+                            <p>Customer care No:020-12345678</p>
+                               
+                        </div>
+                        <h2>Non-Order Related</h2>
+                        <div>
+                            <h3>Want to know about offers and discounts ?</h3>
 
-                                <Button variant="primary" type="submit">
-                                    Submit
-  </Button>
-                            </div>
-                        </form>
+                            <h3>Manage Your Account?</h3>
+
+                            <h3>payments/Refund</h3>
+
+                            <h3>Others</h3>
+
+                        </div>
+
+                           
                     </div>
-          
+
+
+
                 </div>
             </div>
         );
@@ -115,4 +114,4 @@ class MyAcc extends Component {
 
 }
 
-export default MyAcc;
+export default Help;
